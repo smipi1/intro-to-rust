@@ -1,8 +1,9 @@
 fn main() {
-    let mut s = String::from("hello");
+    let reference_to_nothing = dangle();
+}
 
-    let r1 = &mut s;
-    let r2 = &mut s;
+fn dangle() -> &String {
+    let s = String::from("hello");
 
-    println!("{}, {}", r1, r2);
+    &s
 }
